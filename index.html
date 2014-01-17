@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AWS S3 Bucket Browser .:Based on AWS SDK for JavaScript:.</title>
+		<link rel="stylesheet" type="text/css" href="css/theme.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc1.min.js"></script>
+	</head>
+	<body>
+		<script src="js/config.js"></script>	
+		<script src="js/s3bb.js"></script>	
+		<div id="overlay"></div>
+		<div id="maincontent">
+			<div id="header">
+				<div id="subheader">
+					<div id="headertitle">S3 Browser Files</div>
+					<div id="status"></div>
+				</div>
+				<div id="breadcrumb" class="breadcrumb"></div>
+			</div>
+			<div id="contents">
+				<div id="elements">
+					<ul id="objects"></ul>
+				</div>
+			</div>
+			<div id="footer">
+				<p>Powered by <a href="http://github.com/juvs/s3-bucket-browser" target="_blank">AWS S3 Bucket Browser</a></p>
+			</div>
+		</div>
+	</body>
+</html>  

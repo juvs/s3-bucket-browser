@@ -1,0 +1,177 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+  background-color: #fff;
+  font-family: verdana, sans-serif;
+  overflow: hidden;
+  height: 100%;
+  padding:0px;
+  margin:0px;			  
+}
+
+p, li, td, div {
+  font-size: 13px;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+ul {
+   list-style: none;
+}
+
+ul li {
+	list-style: none;
+	padding-bottom: 2px;
+}
+
+ul li img {
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+span.size {
+	color: #ccc;
+	font-size: 10px;
+	padding-left: 5px;
+}
+
+span.path {
+	padding : 0px 5px 0px 5px;
+}			
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+a span {
+  text-decoration: none;
+}
+a:hover {
+  color: #000;
+}
+a:hover span {
+  text-decoration: underline;
+}
+
+div.breadcrumb {
+  padding: 3px 0px 5px 5px;
+  background-color: #fff;
+  height: 19px;
+  border-bottom: 1px solid #eee;
+}
+
+div.breadcrumb, div.breadcrumb a {
+	color: #000;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+div.breadcrumb a {
+	color: #16B;
+}
+div.breadcrumb a:hover {
+	background-color: #efefef;
+}
+
+#status {
+	padding: 5px 0px 5px 0px;
+	height: 20px;
+	color: #fff;
+}
+
+#statusimg {
+	vertical-align: middle;
+	padding-right: 3px;			
+	background: url("../img/loading.gif") no-repeat;
+	float: left;
+	width: 15px;
+	height: 15px;				
+}			
+
+#status a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#status a:hover {
+	color: #16B;
+	text-decoration: underline;
+	background-color: #E8E8E8;
+}
+
+#maincontent{
+
+}			
+
+#header {
+	background-color: #999;
+	border-bottom: 1px solid #ccc;
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	overflow: hidden;
+	top: 0px;
+	height:100px;    /* Edit for height of header*/			  
+}
+
+#headertitle {
+	color: #000;
+	font-size: 26px;
+}
+
+#subheader {
+	padding: 5px 15px;
+}
+
+#contents {
+	overflow: auto;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 100px;
+	bottom: 41px;			
+	
+}
+
+#elements {
+	position: relative;
+	border: 5px solid #fff;
+	overflow-y: auto;
+	overflow-x: hidden;				
+}
+
+#footer {
+	background-color: #999;
+	border-top: 1px solid #eee;
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	clear: both;
+	overflow: hidden;
+	height:40px;
+}
+
+#footer p {
+	font-size: 11px;
+	color: #fff;
+	text-align: right;
+	margin-right: 5px;	
+}
+#footer a {
+	color: #fff;
+	text-decoration: underline;
+}
+  
+#overlay {
+	background-color: black;
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	opacity: 0.2; /* also -moz-opacity, etc. */
+	z-index: 10;
+}
