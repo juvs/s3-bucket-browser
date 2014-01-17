@@ -93,7 +93,8 @@ function renderObjects(contents, countFolders, currentCountFiles, prefix, trunca
 		icon = '<img src="img/document.png"/>'
 		if (prefix !== key) {
 			countFiles++;
-			$('#objects').append('<li><a target="_blank" href="' + 'http://s3.amazonaws.com/idmexico-cavi/' + key + '">' + icon + '<span>' + fileName + '</span><span class="size">' + size + 'K</span></a></li>');
+			var params = {Bucket: 'bucket', Key: 'key'};
+			$('#objects').append('<li><a href="javascript:getObject(\'' + key + '\')">' + icon + '<span>' + fileName + '</span><span class="size">' + size + 'K</span></a></li>');
 		}
 	}
 	if (truncated) {
@@ -103,6 +104,12 @@ function renderObjects(contents, countFolders, currentCountFiles, prefix, trunca
 	} else {
 		$('#status').html('Loaded : ' + countFolders + ' folder(s), ' + countFiles + ' item(s) from S3');
 	}			
+}
+
+function getObject(key) {
+	var params = {Bucket: AWS_BucketName, Key: key};
+	var url = bucket.getSignedUrl('getObject', params);
+	window.open(url, url);
 }
 
 function scrollToBottomListObjects() {
