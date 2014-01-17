@@ -107,7 +107,7 @@ function renderObjects(contents, countFolders, currentCountFiles, prefix, trunca
 }
 
 function getObject(key) {
-	var params = {Bucket: AWS_BucketName, Key: key};
+	var params = {Bucket: AWS_BucketName, Key: key, Expires: AWS_SignedUrl_Expires};
 	var url = bucket.getSignedUrl('getObject', params);
 	window.open(url, url);
 }
