@@ -3,7 +3,7 @@ AWS S3 Bucket Browser
 
 S3 Bucket Browser, **fully based on AWS JavaScript API**, see http://aws.amazon.com/sdkfornodejs/
 
-Base on the idea of : https://raw2.github.com/rgrp/s3-bucket-listing and inspired on the current S3 Browser from Amazon.
+Base on the idea of : https://github.com/rgrp/s3-bucket-listing and inspired on the current S3 Browser from Amazon.
 
 Intent for public or private usage, you can deploy this files on any web site.
 
@@ -15,8 +15,9 @@ Using the new IAM Users from AWS you can provide more specific and secure access
 
 **Notes** I recommend create specific user or roles to access bucket to browse, then generate their access key, for now this code is intent only for browse, then no need to create a user with other privileges just use ListObjects. Check this link http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html
 
-1.Copy the files on your web site. Could be based on Apache or IIS.
-2.Modify the setting in file js/config.js
+1) Copy the files on your web site. Could be based on Apache or IIS.
+
+2) Modify the setting in file js/config.js
 
     var AWS_AccessKeyId = ''; //Your credentials for specific user and privileges
     var AWS_SecretAccessKey = ''; //Your credentials for specific user and privileges
@@ -26,11 +27,11 @@ Using the new IAM Users from AWS you can provide more specific and secure access
     var AWS_Prefix = ''; //Stating folder, by default start on root of bucket
     var TITLE = 'S3 Bucket browser';
 	
-3.Navigate to index.html and start browsing...
+3) Navigate to index.html and start browsing...
 
 ## Copyright and License
 
-Copyright 2013-2014 Juvenal Guzmán.
+Copyright 2013-2014 Juvenal Guzman.
 
 Licensed under the MIT license:
 
