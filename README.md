@@ -25,6 +25,8 @@ Using the new IAM Users from AWS you can provide more specific and secure access
     var AWS_BucketName = '';
     var AWS_MaxKeys = 500; //How many objects will retrive (include folders and items)
     var AWS_Prefix = ''; //Stating folder, by default start on root of bucket
+    //Check this parameter in http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
+    var AWS_SignedUrl_Expires = 900; //This is the default value for expires getSignedUrl (value in seconds, 15 mins set)
     var TITLE = 'S3 Bucket browser';
 	
 3) Navigate to index.html and start browsing...
