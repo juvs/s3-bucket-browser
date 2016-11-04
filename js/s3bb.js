@@ -1,6 +1,4 @@
-AWS.config.update({accessKeyId: AWS_AccessKeyId, secretAccessKey: AWS_SecretAccessKey});
-AWS.config.region = AWS_Region;
-var bucket = new AWS.S3({params: {Bucket: AWS_BucketName}});
+var bucket = null;
 
 function listMoreObjects(marker, prefix, countFiles, countFolders) {
 	$('#overlay').show();
@@ -22,7 +20,7 @@ function listObjects(prefix) {
 	$('#overlay').show();
 	$('#status').html('<div id="statusimg"></div>Loading...');
 	$('#objects').empty();
-	
+
 	bucket.listObjects({MaxKeys: AWS_MaxKeys, Prefix : prefix, Delimiter : '/' },function (err, data) {
 		if (err) {
 			$('#status').html('<img src="img/exclamation-red.png"> Could not load objects from S3');
@@ -120,7 +118,51 @@ function init() {
 	$('#headertitle').html(TITLE);
 }
 
-$( document ).ready(function() {
-	init();
+function runS3Browser() {
+	AWS.config.region = AWS_Region;
+	AWS.config.update({accessKeyId: AWS_AccessKeyId, secretAccessKey: AWS_SecretAccessKey});
+	bucket = new AWS.S3({params: {Bucket: AWS_BucketName}});
 	listObjects(AWS_Prefix);
+}
+
+function showLoginForm() {
+	$('#overlay').hide();
+	$("body").append(
+		'<div id="loginForm">' +
+		'<h2>AWS Credentials</h2><br />' +
+		'<label for="AccessKeyId">AccessKeyId:</label> <input id="AccessKeyId" type="password" name="AccessKeyId" maxlength="21"><br />' +
+		'<label for="SecretAccessKey">SecretAccessKey:</label> <input id="SecretAccessKey" type="password" name="SecretAccessKey" maxlength="41"><br /><br />' +
+		'<input type="button" value="      Login      " onclick="login()">' +
+		'</div>'
+	);
+}
+
+function login() {
+	// validation
+	var AccessKeyId = $('input[name=AccessKeyId]').val();
+	var SecretAccessKey = $('input[name=SecretAccessKey]').val();
+
+	if (AccessKeyId === "" || SecretAccessKey === "") {
+		return alert('AccessKeyId and SecretAccessKey are required');
+	}
+
+	// update config data
+	AWS_AccessKeyId = AccessKeyId;
+	AWS_SecretAccessKey = SecretAccessKey;
+
+	$('#loginForm').remove();
+
+	$('#overlay').show();
+	runS3Browser()
+}
+
+$(document).ready(function() {
+	init();
+
+	// if keys are not available from config then ask user to provide those
+	if (!AWS_SecretAccessKey) {
+		showLoginForm();
+	} else {
+		runS3Browser();
+	}
 });
