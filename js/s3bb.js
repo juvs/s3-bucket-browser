@@ -143,7 +143,7 @@ function login() {
 	var SecretAccessKey = $('input[name=SecretAccessKey]').val();
 
 	if (AccessKeyId === "" || SecretAccessKey === "") {
-		alert('AccessKeyId and SecretAccessKey are required');
+		return alert('AccessKeyId and SecretAccessKey are required');
 	}
 
 	// update config data
