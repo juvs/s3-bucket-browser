@@ -40,6 +40,14 @@ Using the new IAM Users from AWS you can provide more specific and secure access
 
 Copyright 2013-2014 Juvenal Guzman.
 
+## Contributors
+
+Special thanks to:
+
+Joseph Chereshnovsky (webdevbyjoss)
+
+## License
+
 Licensed under the MIT license:
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
