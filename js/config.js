@@ -1,5 +1,5 @@
-var AWS_AccessKeyId = '';
-var AWS_SecretAccessKey = '';
+var AWS_AccessKeyId = '';  // leave this empty for WEB form auth
+var AWS_SecretAccessKey = '';  // leave this empty for WEB form auth
 var AWS_Region = 'us-east-1';
 var AWS_BucketName = '';
 var AWS_MaxKeys = 500; //How many objects will retrive (include folders and items)

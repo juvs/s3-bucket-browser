@@ -175,3 +175,23 @@ div.breadcrumb a:hover {
 	opacity: 0.2; /* also -moz-opacity, etc. */
 	z-index: 10;
 }
+
+#loginForm {
+	position: absolute;
+	width: 300px;
+	border: 1px solid silver;
+	margin: auto;
+	left: 50%;
+	margin-top: 10%;
+	margin-left: -200px;
+	padding: 100px 100px;
+	background-color: white;
+}
+
+#loginForm label {
+	display: block;
+}
+
+#loginForm input[type=password] {
+	width: 300px;
+}
