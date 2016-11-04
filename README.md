@@ -28,8 +28,13 @@ Using the new IAM Users from AWS you can provide more specific and secure access
     //Check this parameter in http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
     var AWS_SignedUrl_Expires = 900; //This is the default value for expires getSignedUrl (value in seconds, 15 mins set)
     var TITLE = 'S3 Bucket browser';
-	
+
+	**Notes:** You can leave the `AccessKeyId` and `SecretAccessKey` as empty strings to avoid exposing AWS credentials publicly. 
+	In this case the S3 Bucket Browser will prompt user for credentials via WEB form.
+
 3) Navigate to index.html and start browsing...
+
+
 
 ## Copyright and License
 
