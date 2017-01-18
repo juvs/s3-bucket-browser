@@ -96,7 +96,7 @@ function renderObjects(contents, countFolders, currentCountFiles, prefix, trunca
 			$('#objects').append(
 				'<li><a href="javascript:getObject(\'' + key + '\')">' + icon + '<span>' + fileName + '</span>' +
 				'<span class="size">' + size + 'K</span>' +
-                '<span class="lastModifiedDate">Last modified: ' + lastModified + '</span>' +
+				'<span class="lastModifiedDate">Last modified: ' + lastModified + '</span>' +
 				'</a></li>'
 			);
 		}
