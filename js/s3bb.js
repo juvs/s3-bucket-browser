@@ -14,7 +14,7 @@ function listMoreObjects(marker, prefix, countFiles, countFolders) {
 		}
 		$('#overlay').hide();
 	});
-};
+}
 
 function listObjects(prefix) {
 	$('#overlay').show();
@@ -59,7 +59,7 @@ function listObjects(prefix) {
 				if (topFolder !== '') {
 					topFolder += '/';
 				}
-				icon = '<img src="img/arrow-090.png"/>'
+				icon = '<img src="img/arrow-090.png"/>';
 				$('#objects').append('<li><a href="javascript:listObjects(\'' + topFolder + '\')">' + icon + '<span>...</span></a></li>');
 			}
 			$('#breadcrumb').html('Current folder is : ' + currentFolder);
@@ -68,7 +68,7 @@ function listObjects(prefix) {
 			for (var i = 0; i < data.CommonPrefixes.length; i++) {
 				var currentPrefix = data.CommonPrefixes[i].Prefix;
 				var name = (currentPrefix.replace(prefix, '')).replace('/','');
-				icon = '<img src="img/folder-horizontal.png"/>'
+				icon = '<img src="img/folder-horizontal.png"/>';
 				if (prefix !== currentPrefix) {
 					countFolders++;
 					$('#objects').append('<li><a href="javascript:listObjects(\'' + currentPrefix + '\')">' + icon + '<span>' + name + '</span></a></li>');
@@ -79,7 +79,7 @@ function listObjects(prefix) {
 		}
 		$('#overlay').hide();
 	});
-};
+}
 
 function renderObjects(contents, countFolders, currentCountFiles, prefix, truncated, nextMarker) {
 	//Load files...
@@ -88,16 +88,22 @@ function renderObjects(contents, countFolders, currentCountFiles, prefix, trunca
 		var key = contents[i].Key;
 		var size = Math.ceil(contents[i].Size / 1024);
 		var fileName = key.replace(prefix, '');
-		icon = '<img src="img/document.png"/>'
+		var lastModified = contents[i].LastModified.toString();
+		icon = '<img src="img/document.png"/>';
 		if (prefix !== key) {
 			countFiles++;
 			var params = {Bucket: 'bucket', Key: 'key'};
-			$('#objects').append('<li><a href="javascript:getObject(\'' + key + '\')">' + icon + '<span>' + fileName + '</span><span class="size">' + size + 'K</span></a></li>');
+			$('#objects').append(
+				'<li><a href="javascript:getObject(\'' + key + '\')">' + icon + '<span>' + fileName + '</span>' +
+				'<span class="size">' + size + 'K</span>' +
+                '<span class="lastModifiedDate">Last modified: ' + lastModified + '</span>' +
+				'</a></li>'
+			);
 		}
 	}
 	if (truncated) {
 		$('#status').html('Loaded : ' + countFolders + ' folder(s), showing ' + countFiles + ' item(s) from S3, <a href="javascript:scrollToBottomListObjects()"><img src="img/arrow-270.png">Go to the bottom of the list to load more items.</a>');
-		icon = '<img src="img/plus-circle.png"/>'
+		icon = '<img src="img/plus-circle.png"/>';
 		$('#objects').append('<li id="moreobjects"><a href="javascript:listMoreObjects(\'' + nextMarker + '\',\'' + prefix + '\',' + countFiles + ',' + countFolders + ')">' + icon + '<span>Get more items...</span></a></li>');
 	} else {
 		$('#status').html('Loaded : ' + countFolders + ' folder(s), ' + countFiles + ' item(s) from S3');
