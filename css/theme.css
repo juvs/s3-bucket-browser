@@ -41,6 +41,12 @@ span.size {
 	padding-left: 5px;
 }
 
+span.lastModifiedDate {
+	color: #caa;
+	font-size: 10px;
+	padding-left: 25px;
+}
+
 span.path {
 	padding : 0px 5px 0px 5px;
 }			
