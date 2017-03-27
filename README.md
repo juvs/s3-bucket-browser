@@ -19,15 +19,15 @@ Using the new IAM Users from AWS you can provide more specific and secure access
 
 2) Modify the setting in file js/config.js
 
-    var AWS_AccessKeyId = ''; //Your credentials for specific user and privileges
-    var AWS_SecretAccessKey = ''; //Your credentials for specific user and privileges
-    var AWS_Region = 'us-east-1';
-    var AWS_BucketName = '';
-    var AWS_MaxKeys = 500; //How many objects will retrive (include folders and items)
-    var AWS_Prefix = ''; //Stating folder, by default start on root of bucket
-    //Check this parameter in http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
-    var AWS_SignedUrl_Expires = 900; //This is the default value for expires getSignedUrl (value in seconds, 15 mins set)
-    var TITLE = 'S3 Bucket browser';
+	- var AWS_AccessKeyId = ''; //Your credentials for specific user and privileges
+	- var AWS_SecretAccessKey = ''; //Your credentials for specific user and privileges
+	- var AWS_Region = 'us-east-1';
+	- var AWS_BucketName = '';
+	- var AWS_MaxKeys = 500; //How many objects will retrive (include folders and items)
+	- var AWS_Prefix = ''; //Stating folder, by default start on root of bucket
+	- var AWS_SignedUrl_Expires = 900; //This is the default value for expires getSignedUrl (value in seconds, 15 mins set)
+	//Check this parameter in http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
+	- var TITLE = 'S3 Bucket browser';
 
 	**Notes:** You can leave the `AccessKeyId` and `SecretAccessKey` as empty strings to avoid exposing AWS credentials publicly. 
 	In this case the S3 Bucket Browser will prompt user for credentials via WEB form.
