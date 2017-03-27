@@ -34,11 +34,25 @@ Using the new IAM Users from AWS you can provide more specific and secure access
 
 3) Navigate to index.html and start browsing...
 
+## Bucket Configuration
 
-
+Need to establish this CORS configurations on your bucket to works correctly:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>DELETE</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+```
 ## Copyright and License
 
-Copyright 2013-2014 Juvenal Guzman.
+Copyright 2017 Juvenal Guzman.
 
 ## Contributors
 
