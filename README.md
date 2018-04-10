@@ -59,6 +59,7 @@ Copyright 2017 Juvenal Guzman.
 Special thanks to:
 
 Joseph Chereshnovsky (webdevbyjoss)
+Jouni Kaplas (kaplas)
 
 ## License
 
